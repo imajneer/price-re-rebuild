@@ -30,11 +30,6 @@
         },
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.LogicSquare.Price12"
-        },
-        "com.phonegap.plugins.facebookconnect": {
-            "APP_ID": "584320658404604",
-            "APP_NAME": "Price",
-            "PACKAGE_NAME": "com.LogicSquare.Price12"
         }
     },
     "dependent_plugins": {}
