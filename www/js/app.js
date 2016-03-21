@@ -30,7 +30,7 @@ angular.module('app', ['ionic','ionic.service.core', 'app.controllers', 'app.rou
      
   }
 })
-.config(['$resourceProvider', function($resourceProvider,$logProvider) {
+.config(['$resourceProvider','$logProvider', function($resourceProvider,$logProvider) {
   // Don't strip trailing slashes from calculated URLs
   $logProvider.debugEnabled(true);
   $resourceProvider.defaults.stripTrailingSlashes = false;
