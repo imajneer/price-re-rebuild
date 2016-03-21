@@ -1,12 +1,12 @@
 angular.module('app.common', [])
 
-.service('Util',function($rootScope,$http,$state,$ionicLoading) {
+.service('Util',function($rootScope,$http,$state,$ionicLoading,$log) {
     //insert common functions here
     return {
 	 	buyNow: buyNow
     }
     function buyNow(product){ //this should also be moved to a util singleton
-      console.log('Buying now...')
+      $log.debug('Buying now...')
       backImg = 'img/back.png'
       if(ionic.Platform.isIOS())
         backImg = 'img/back-ios.png'
@@ -32,10 +32,10 @@ angular.module('app.common', [])
       };
       var ref = cordova.ThemeableBrowser.open(product.purchase_url, '_blank', browserOptions);
       ref.addEventListener('loadstart', function(event) {
-          //console.log("loadstart" + event.url);
+          //$log.debug("loadstart" + event.url);
       });
       ref.addEventListener('loadstop', function(event) {
-        //console.log("loadstart" + event.url);
+        //$log.debug("loadstart" + event.url);
         if ((event.url).indexOf('http://www.amazon.com/gp/buy/thankyou') === 0) {
             setTimeout(function() {
                 ref.close(); // close inappbrowser 3seconds after purchase

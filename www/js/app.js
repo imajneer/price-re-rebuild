@@ -7,12 +7,12 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('app', ['ionic','ionic.service.core', 'app.controllers', 'app.routes', 'app.services','app.directives','ngResource','LocalStorageModule','ionic.contrib.ui.hscrollcards','ngIOS9UIWebViewPatch','ngCordova','ti-segmented-control','rzModule','app.feedCtrl','app.filterCtrls','app.common'])
 
-.run(function($ionicPlatform,$rootScope,localStorageService,$timeout,Util) {
+.run(function($ionicPlatform,$rootScope,localStorageService,$timeout,Util,$log,$window) {
     
-    console.log('ran run function in app');
-  $ionicPlatform.ready(function() {
-      console.log('platform ready under app...');
-      init();
+    $log.debug('ran run function in app');
+    $ionicPlatform.ready(function() {
+    $log.debug('platform ready under app...');
+    init();
   
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,31 +20,19 @@ angular.module('app', ['ionic','ionic.service.core', 'app.controllers', 'app.rou
   });
   
   function init() {
-    if(window.cordova && window.cordova.plugins.Keyboard) {
+    if($window.cordova && $window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
-    if(window.StatusBar) {
+    if($window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-    
-    $rootScope.hostUrl = 'http://staging12.getpriceapp.com';
-    $rootScope.user = {};
-
-    if(localStorageService.keys()) {
-        $rootScope.user.photoUrl = localStorageService.get('photoUrl');
-        $rootScope.user.id = localStorageService.get('userId');
-        $rootScope.user.accessToken = localStorageService.get('accessToken');
-        $rootScope.user.fullName = localStorageService.get('fullName');
-        $rootScope.user.email = localStorageService.get('email');
-        $rootScope.user.gender = localStorageService.get('gender');
-        $rootScope.user.location = localStorageService.set('location');        
-    }
-
+     
   }
 })
-.config(['$resourceProvider', function($resourceProvider) {
+.config(['$resourceProvider', function($resourceProvider,$logProvider) {
   // Don't strip trailing slashes from calculated URLs
+  $logProvider.debugEnabled(true);
   $resourceProvider.defaults.stripTrailingSlashes = false;
 //   stripeProvider.setPublishableKey('pk_test_aKantRCo8oXwL3FxinYqdEyn');
 

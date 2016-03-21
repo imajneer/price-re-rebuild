@@ -1,16 +1,28 @@
 angular.module('app.feedCtrl',['app.services','ngLodash','ngCordova'])
 .controller('feedCtrl',function($scope,$rootScope,$state,$ionicModal,$q,$filter,lodash,$ionicPlatform,PriceAPI,$ionicActionSheet,$ionicScrollDelegate,$http,localStorageService,$timeout,$ionicLoading,Favs,$log) {
 
-	 $log.log('loaded feed controller...');
+    $log.log('loaded feed controller...');
     $scope.$on('$ionicView.beforeEnter',function() {
         $log.log('before enter...');
         if(localStorageService.get('accessToken')) {
-	        //should already be signed in
+            //should already be signed in
         } else if(ionic.Platform.isIOS() || ionic.Platform.isAndroid())  {
-//        $state.go('signin'); //currently, Facebook login doesn't work
+    //        $state.go('signin'); //currently, Facebook login doesn't work
         }
         if(angular.isUndefined($rootScope.user)) {
             $rootScope.user = {};
+        }
+         $rootScope.hostUrl = 'http://staging12.getpriceapp.com';
+    
+        if(localStorageService.keys()) {
+            $log.debug('got local storage keys',localStorageService.keys());
+            $rootScope.user.photoUrl = localStorageService.get('photoUrl');
+            $rootScope.user.id = localStorageService.get('userId');
+            $rootScope.user.accessToken = localStorageService.get('accessToken');
+            $rootScope.user.fullName = localStorageService.get('fullName');
+            $rootScope.user.email = localStorageService.get('email');
+            $rootScope.user.gender = localStorageService.get('gender');
+            $rootScope.user.location = localStorageService.get('location');        
         }
 
         
