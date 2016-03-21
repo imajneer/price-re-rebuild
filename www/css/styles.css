@@ -1,0 +1,758 @@
+@media screen and (max-device-width: 320px) and (max-device-height: 568px) {
+	.feed-image {
+		height: 150px !important;
+}
+	 }
+@media screen and (max-device-width: 414px) and (max-device-height: 776px) { /* Insert styles here */ }
+
+
+
+.facebook-sign-in {
+  background-color: #3B5998 !important;
+  border: none !important;
+  color: #fff !important;
+  top: 80% !important;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.background_img {
+    background-image: url(../img/welcome.png);
+    background-size: cover;
+    min-height: 100%;
+    min-height: 100vh;
+}
+
+.login-container {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    background: #fff;
+    padding: 20px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid #3b3a3a;
+    border-radius: 10px;
+}
+
+.login-container .price-logo {
+    width: 100%
+}
+
+.login-container .tagline {
+    margin: 15px 0;
+    color: #000;
+    font-size: 13px;
+    padding: 5px 1px 0;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.login-container .login-text {
+    margin: 15px 0 0 0;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 2px;
+}
+
+.login-container .tagline-bottom {
+    font-size: 9px;
+    margin-top: 5px;
+}
+
+.welcome-page {
+  background-image: url("../img/welcome.png") !important;
+  background-size: cover !important;
+  height: 100% !important;
+}
+
+.welcome-logo {
+  width: 200px !important;
+  margin: 0 auto 60% 0;
+}
+
+/**********************************
+global CSS
+**********************************/
+.modal {
+  top: 0 ;
+  bottom: 0 ;
+  left: 0 ;
+  right: 0 ;
+  width: 100% ;
+}
+
+.modal-backdrop-bg {
+    background-color: transparent !important;
+}
+
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+
+.filter-btn {
+    margin-right: 5px;
+}
+
+
+.padding {
+  padding: 0;
+}
+
+h1 .title {
+    text-overflow: ellipsis;
+}
+
+.logo {
+  width: 55px;
+  vertical-align: bottom !important;
+}
+
+.logo-title {
+  position: absolute !important;
+}
+
+.cat-btn {
+    z-index:1000;
+}
+
+
+a {
+  text-decoration: none
+}
+
+
+.item {
+  padding: 0;
+}
+
+.ion-record {
+  font-size: 10px;
+}
+
+.ion-item {
+  height: 250px !important;
+}
+
+
+/**********************************
+scroll/category CSS
+**********************************/
+.scroll-ion {
+  border: none;
+  height: 85px !important;
+  margin-top: 10px! important;
+}
+
+/* ti controller stuff */
+.scroll-ti-p {
+	font-size: 10px;
+	text-transform: uppercase;
+	color: #222;
+	margin: -15px auto;
+	width: 100%;
+}
+
+.scroll-ti-a {
+	max-height: 70px !important;
+	min-height: 70px !important;
+	text-align: center;
+	margin: 0 auto;
+}
+
+/* icon and background circles */
+.scroll-icon img {
+	height: 25px;
+	width: 25px;
+}
+
+.scroll-imgdiv {
+	height: 50px;
+	width: 50px;
+	background-color: #eee;
+	padding: 10px;
+	border-radius: 50px;
+	margin: 0 auto 10px auto !important;
+}
+
+.scroll-div {
+	padding: 0 !important;
+	width: 100% !important;
+}
+
+.scroll-div .active {
+	opacity: 1 !important;
+}
+
+.scroll-div .active .scroll-imgdiv {
+	background-color: #555;
+}
+
+.has-scrollnav {
+	top: 135px !important;
+}
+
+.has-fix {
+	margin-top: -50px !important;
+}
+
+.has-fix2 {
+	margin-top: -75px !important;
+}
+
+
+/**********************************
+feed.html
+**********************************/
+/* ionic item */
+.feed-ion {
+  padding: 0 !important;
+  border: none! important;
+  height: 200px !important;
+}
+
+.feed-ion .item {
+  padding: 0 !important;
+  margin: 0 !important;
+  border-right: none !important;
+
+}
+
+.feed-ion:nth-child(n+1) {
+  border-right: none !important;
+}
+
+
+/**********************************
+feed-item.html
+**********************************/
+/* div that the feed image is in */
+.feed-image {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border: none !important;
+  z-index: -1;
+
+}
+
+.feed-image img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  filter: contrast(1);
+  -webkit-filter: contrast(1);
+  height: auto;
+  width: 100%;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+
+}
+
+/* content under the image */
+ .feed-content {
+  padding: 0 !important;
+  position: relative !important;
+/*   top: 5px !important; */
+/*   left: 3% !important; */
+  width: 100%;
+  overflow: hidden;
+  border: none !important
+/*   background-color: #eee !important; */
+}
+
+/* text */
+.feed-content .ng-binding {
+  display: block;
+  margin: 0 32px auto 0;
+  padding: 0 5px;
+  text-transform: uppercase;
+  font-size: 11px !important;
+  font-weight: 300;
+/*   background-color: #eee; */
+/*  border-bottom: solid #999 1px;*/
+}
+
+
+/**********************************
+fave-heart.html
+**********************************/
+.feed-heart {
+  font-size: 23px !important;
+  margin-right: -10px;
+  font-weight: 600;
+}
+
+/**********************************
+favorites.html
+**********************************/
+.favorites-ion {
+	border: none !important;
+}
+
+.favorites-item {
+	padding: 0 !important;
+	border: none !important;
+}
+
+
+/**********************************
+productDetails.html
+**********************************/
+/* header */
+.prod-details {
+  width: 85%;
+  font-size: 12px !important;
+  font-size: 300 !important;
+  text-transform: uppercase !important;
+}
+
+.det-close {
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+/* slider images */
+.photo-image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.photo-image img {
+  position: absolute;
+   filter: contrast(1);
+  -webkit-filter: contrast(1);
+  left: 50%;
+  top: 50%;
+  height: auto;
+  width: 100%;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+.slider-pager {
+  bottom: 35px!important;
+}
+
+.slider-pager .slider-pager-page {
+	color: #fff;
+	width: 5px;
+	margin: 0px 7.5px;
+}
+
+/* social */
+.social-icons {
+  font-size: 55px;
+  color: #999;
+  margin: -70px 0 0 -45px;
+  position: absolute;
+}
+.social-icons a{
+  z-index: 99999;
+  margin: 0 5px !important;
+}
+
+.social-icons .feed-heart {
+	font-size: 45px !important;
+}
+
+/* prices/productInfo */
+.product-info {
+/*   background-color: #f1f1f1; */
+  padding: 10px 0;
+  margin-top: -15px;
+}
+
+.retail, .savings, .actual {
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 14px;
+  color: #555;
+}
+
+.savings {
+  text-align: right;
+}
+
+.actual {
+  text-align: center;
+}
+
+.actual h1 {
+  margin: 0;
+  font-size: 12.5vw;
+  font-weight: 300;
+}
+
+.simulation {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #999;
+}
+
+.getit {
+	margin-top: -5px !important;
+}
+
+/* browse similar */
+.browse-similar {
+	margin-top: 25px;
+}
+
+.browse-similar h5 {
+  text-transform: uppercase;
+  font-size: 1.6em;
+  color: #555;
+  margin-bottom: 15px;
+  font-weight: 200;
+  text-align: center;
+}
+
+.browse-similar .row {
+  padding: 0;
+}
+
+.browse-similar .hscroller {
+  padding: 0;
+}
+
+.browse-similar .hscroller-card {
+  background-color: transparent;
+  margin: 0 !important;
+}
+
+.browse-similar .hscroller-label {
+  color: #000 !important;
+  overflow: hidden;
+  line-height: 12px !important;
+  font-szoe: 10px;
+  height: 14px !important;
+}
+
+.browse-similar .hscroller-card img {
+
+}
+
+/* buy button */
+.buy-title {
+  text-transform: uppercase;
+  font-size: 2.1em !important;
+  font-weight: 800 !important;
+}
+
+/**********************************
+account.html
+**********************************/
+
+.account-photo {
+  position: relative;
+  width: 100%;
+  height: 35%;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.account-photo img {
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  opacity: 0.7;
+  height: auto;
+  width: 100%;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
+.account-userdiv {
+  position: absolute;
+  top: 10%;
+}
+
+.account-userinfo {
+  text-transform: uppercase;
+}
+
+.account-userinfo h2, .account-userinfo p {
+  color: #fff;
+}
+
+.account-userinfo h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.8em;
+}
+
+.account-userstats div {
+  margin: 0 15px;
+}
+
+.account-userlikes h3, .account-userbuys h3,
+.account-userlikes p, .account-userbuys p {
+  margin: 0;
+  color: #fff;
+}
+
+.account-userlist {
+  height: 100%;
+}
+
+/**********************************
+Heart animation CSS
+**********************************/
+
+  .cbutton {
+  position: relative;
+  display: inline-block;
+  margin: 1em;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #286aab;
+  font-size: 1.4em;
+  overflow: visible;
+  -webkit-transition: color 0.7s;
+  transition: color 0.7s;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.cbutton.cbutton--click,
+.cbutton:focus {
+  outline: none;
+  color: #3c8ddc;
+}
+
+.cbutton__icon {
+  display: block;
+}
+
+.cbutton::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -35px 0 0 -35px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  content: '';
+  opacity: 0;
+  pointer-events: none;
+}
+
+  /* Sanja */
+.cbutton--effect-sanja::after {
+  background: rgba(111,148,182,0.1);
+}
+
+.cbutton--effect-sanja.cbutton--click::after {
+  -webkit-animation: anim-effect-sanja 1s ease-out forwards;
+  animation: anim-effect-sanja 1s ease-out forwards;
+}
+
+@-webkit-keyframes anim-effect-sanja {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.5, 0.5, 1);
+    transform: scale3d(0.5, 0.5, 1);
+  }
+  25% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes anim-effect-sanja {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.5, 0.5, 1);
+    transform: scale3d(0.5, 0.5, 1);
+  }
+  25% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+
+
+.filters-modal {
+    background-color: white;
+}
+
+.social-btns{
+  padding-top: 60px!important;
+  border-bottom: 2px solid #000;
+}
+.social-btns .scroll{
+  padding: 0 15px;
+}
+
+.bar-subheader{
+  top: 100px !important;
+}.collection-repeat-container{
+  margin-top: 61px;
+}
+
+.text-danger{
+	padding: 10px;
+	color: red;
+}
+
+/* color selection blocks */
+
+.color-block {
+    width:30px;
+    height:30px;
+    padding: 15px;
+}
+
+
+
+/**********************************
+Filters CSS
+**********************************/
+
+.redcolor {
+	 background-color: #c06;
+	 height: 25px;
+	 width: 25px;
+	 border-radius: 50%;
+ }
+
+ .filters-leftside {
+	 width: 20vw !important;
+	 background-color: #444 !important;
+	 border: none !important;
+ }
+
+ .filters-leftlist .item {
+	 background-color: #444 !important;
+	 border: none !important;
+	 height: 100px !important;
+	  }
+ .filters-leftlist .item.active{
+	 background-color: #aaa !important;
+ }
+  .filters-leftlist a {
+	 padding: 20px 10px !important;
+	 text-align: center;
+ }
+
+ .filters-leftlist a i {
+	 width: 50px !important;
+	 font-size: 2em;
+	 margin: 0 auto;
+	 text-align: center;
+	 color: #eee;
+	 padding: 0;
+ }
+
+  .filters-icontag {
+	 width: 100%;
+	 text-transform: uppercase;
+	 font-size: .6em !important;
+	 margin: 0 auto;
+	 text-align: center;
+	 overflow: visible !important;
+	 color: #fff !important;
+ }
+
+ .filters-rightside {
+	 background-color: #aaa !important;
+ }
+
+  .filters-rightside .row {
+	 padding: 0 !important;
+ }
+
+  .filters-col {
+	  padding: 0 !important;
+	  overflow: visible !important;
+  }
+
+  .filters-dividers {
+	  font-size: 1em !important;
+	  text-transform: uppercase;
+	  font-weight: 300 !important;
+  }
+  .filters-icon:active {
+	color: #fff;
+ }
+
+/*
+ .filters-price .range, .filters-pricerange {
+	 background-color: #aaa !important;
+	 border: none !important;
+	 font-size: 1em !important;
+ }
+*/
+
+ .filters-dividers {
+	 background-color: #aaa !important;
+	 border: none !important;
+ }
+
+ .filters-clearbutton {
+	 margin: 0 2.5% !important;
+	 width: 95%;
+ }
+
+
+
+@media (min-width: 100px) {
+  .menu-content {
+    -webkit-transform: translate3d(20vw, 0px, 0px) !important;
+    width: 80vw !important;
+  }
+
+  .bar-header button.ion-navicon {
+    display: none;
+  }
+}
+
+.top-header{
+	background-color: #444;
+	height: 44px;
+	width: 100%;
+}
+.top-header .buttons{
+	text-align: center;
+}
+.top-header .buttons .btn-cancel{
+	float: left;
+}
+.top-header .buttons .btn-apply{
+	float: right;
+}
+.footer-btn{
+	text-align: center;
+	width: 100%;
+}
+.footer-btn .btn-reset{
+	color: #E00 !important;
+}

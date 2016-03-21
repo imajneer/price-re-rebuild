@@ -1,0 +1,61 @@
+
+    <ion-view title="Product Details" cache-view="false">
+      <div class="modal">
+        <header class="bar bar-header bar-dark">
+          <h1 class="title prod-details">{{currentProduct.title | characters:45}}</h1>
+          <div class="button button-clear" ng-click="productModal.hide()"><span class="det-close ion-close"></span></div>
+        </header>
+
+        <ion-content overflow-scroll="true" padding="false" class="has-header" delegate-handle="modalContent">
+          <div ng-show='loadTimeout' ng-cloak><p ng-show='loadTimeout' ng-cloak class='text-danger'>Loading Error... Please check back later</p></div>
+          <div ng-show='!loadTimeout'>
+            <ion-slide-box>
+            <ion-slide ng-repeat="photo in currentProduct.photo_set">
+            <div class="row photo-image">
+                <img class="product" ng-src="{{photo.url_large}}">
+            </div>
+            </ion-slide>
+            </ion-slide-box>
+
+
+            <div class="row">
+                <div class="col-80"></div>
+                <div class="social-icons col">
+	                <pr-fav-heart item='currentProduct'></pr-fav-heart>
+	                <a ng-click="openSharing(currentProduct)"><i class="icon ion-share"></i></a>
+                </div>
+            </div>
+            <!-- <hr>  -->
+
+        <div class="product-info">
+            <div class="prices row">
+                <div class="retail col col-25"><div ng-show='currentProduct.amount_saved > 0'>Retail: <br><s>{{currentProduct.price + currentProduct.amount_saved | currency : $ : 2}}</s></div></div>
+                <div class="actual col col-50" >Our Price:<br><h1><span  pr-numerator=true data-price='{{currentProduct.price}}' data-retail='{{currentProduct.price + currentProduct.amount_saved}}'>{{currentProduct.price | currency : $ : 2}}</span></h1></div>
+                <div class="savings col col-25"><div ng-show='currentProduct.amount_saved > 0'>Savings: <br>{{currentProduct.amount_saved | currency : $ : 2}}</div></div>
+            </div>
+            <div class="simulation row">
+    <!--             <div class="col col-50">Finding the best price...</div> -->
+                <div class="col" pr-store-numerator=true>{{currentProduct.store_name}}</div>
+            </div>
+        </div>
+
+                <button ng-click='util.buyNow(currentProduct)' class="button button-block button-assertive getit" ng-disabled='!getItReady'>
+          <p class="title buy-title">get it</p>
+        </button>
+
+
+<!--             			<hr> -->
+        <div class="browse-similar">
+            <h5>Browse Similar</h5>
+
+            <div class="row">
+                <hscroller delegate-handle="suggestionScroller"  pr-scroll-similar=true>
+                    <hcard ng-repeat="item in currentSuggestions" index="{{$index}}" desc="{{item.title}}" image="{{item.url_medium}}" ng-click="openProduct(item)"></hcard>
+                </hscroller>
+            </div>
+        </div>
+
+
+	</div>
+  </ion-content>
+</ion-view>

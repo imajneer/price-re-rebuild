@@ -1,0 +1,24 @@
+<ion-view title="Categories" left-buttons="leftButtons">
+        <ion-content padding="false" class="filters-rightside">
+          <pr-top-bar></pr-top-bar>
+				<ion-list>
+				<div class="item item-divider filters-dividers">
+			    	Choose a category
+			  	</div>
+					<div class="row">
+						<div class="col filters-col">
+							<ion-checkbox class="checkbox-stable" ng-model="filter.bags">Bags</ion-checkbox>
+							<ion-checkbox class="checkbox-stable" ng-model="filter.clothing">Clothing</ion-checkbox>
+							<ion-checkbox class="checkbox-stable" ng-model="filter.watches">Watches</ion-checkbox>
+							<ion-checkbox class="checkbox-stable" ng-model="filter.shoes">Shoes</ion-checkbox>
+						</div>
+						<div class="col filters-col">
+							<ion-checkbox class="checkbox-stable" ng-model="filter.jewelry">Jewelry</ion-checkbox>
+							<ion-checkbox class="checkbox-stable" ng-model="filter.sunglasses">Sunglasses</ion-checkbox>
+							<ion-checkbox class="checkbox-stable" ng-model="filter.accessories">Accessories</ion-checkbox>
+							<ion-checkbox class="checkbox-stable" ng-model="filter.home">Home</ion-checkbox>
+						</div>
+					</div>
+				</ion-list>
+			<button class="button button-calm filters-clearbutton">Clear Categories</button>
+        </ion-content>
