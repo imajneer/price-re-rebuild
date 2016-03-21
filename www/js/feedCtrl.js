@@ -11,7 +11,7 @@ angular.module('app.feedCtrl',['app.services','ngLodash','ngCordova'])
         }
         if(angular.isUndefined($rootScope.user)) {
             $rootScope.user = {};
-        }
+        };
          $rootScope.hostUrl = 'http://staging12.getpriceapp.com';
     
         if(localStorageService.keys()) {
@@ -23,7 +23,7 @@ angular.module('app.feedCtrl',['app.services','ngLodash','ngCordova'])
             $rootScope.user.email = localStorageService.get('email');
             $rootScope.user.gender = localStorageService.get('gender');
             $rootScope.user.location = localStorageService.get('location');        
-        }
+        };
 
         
         $scope.canReload = true;
@@ -54,7 +54,7 @@ angular.module('app.feedCtrl',['app.services','ngLodash','ngCordova'])
 		$scope.categories = PriceAPI.categories();
 		$scope.catNames = $scope.categories[gender];
 		$scope.catNames.splice(0,0,{'name':'all','img':'img/cats/all.svg'});
-    }
+    };
 
     $rootScope.refresh = function()  {
 	  if($scope.canReload) {
@@ -91,7 +91,7 @@ angular.module('app.feedCtrl',['app.services','ngLodash','ngCordova'])
         }    
     $scope.loadPage = function(page) {
         PriceAPI.loadPage(page);
-    }
+    };
 
     var filterButtons = [
         { text: 'Most Expensive', value: 'expensive' },
@@ -126,6 +126,7 @@ angular.module('app.feedCtrl',['app.services','ngLodash','ngCordova'])
     };
 
     $scope.setCategory = function(cat) {
+        $log.info('set category: ' + cat);
         if(cat === 'all') cat = '';
         $rootScope.products = [];
         $rootScope.currentCategory = cat;
@@ -134,15 +135,17 @@ angular.module('app.feedCtrl',['app.services','ngLodash','ngCordova'])
     };
 
     $scope.selectedCategory = function(idx) {
-        $log.log('selected category: ' + $scope.catNames[idx].name);
+        $log.log('selecting category: ' + $scope.catNames[idx].name);
         $scope.setCategory($scope.catNames[idx].name);
     };
 
     $scope.cancelFilter = function(){
+        $log.info('canceled filters');
         $state.go('tabs.feed');
     }
     
     $scope.applyFilters = function() {
+        $log.info('applied filters');
         $state.go('tabs.feed');
     }
 });
